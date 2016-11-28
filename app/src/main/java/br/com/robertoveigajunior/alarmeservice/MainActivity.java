@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import br.com.robertoveigajunior.alarmeservice.alarm.Alarme;
+import br.com.robertoveigajunior.alarmeservice.login.Login;
 import br.com.robertoveigajunior.alarmeservice.receiver.AlarmReceiver;
 
 public class MainActivity extends AppCompatActivity {
@@ -20,18 +22,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void setTime(View v) {
+    public void goAlarm(View v) {
+        Intent i = new Intent(this, Alarme.class);
+        startActivity(i);
+    }
 
-        EditText text = (EditText) findViewById(R.id.txtSegundos);
-        int i = Integer.parseInt(text.getText().toString());
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                this.getApplicationContext(), 0, intent, 0);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP,
-                System.currentTimeMillis() + (i * 1000),
-                pendingIntent);
-        Toast.makeText(this, "Alarm set in " +i+ " seconds",Toast.LENGTH_LONG).show();
-
+    public void goLogin(View v) {
+        Intent i = new Intent(this, Login.class);
+        startActivity(i);
     }
 }

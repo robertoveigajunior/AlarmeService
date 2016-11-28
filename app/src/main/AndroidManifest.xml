@@ -15,9 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <receiver android:name=".receiver.AlarmReceiver" />
+
+        <activity android:name=".login.Login" />
+        <activity android:name=".alarm.Alarme"/>
+        <service android:name=".service.Logger"
+            android:label="Serviço de mensagens"
+            />
+
     </application>
-
-
-
 </manifest>
