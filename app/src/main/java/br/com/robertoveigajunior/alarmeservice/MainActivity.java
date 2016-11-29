@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import br.com.robertoveigajunior.alarmeservice.alarm.Alarme;
+import br.com.robertoveigajunior.alarmeservice.atividade5.Atividade5;
 import br.com.robertoveigajunior.alarmeservice.login.Login;
 import br.com.robertoveigajunior.alarmeservice.receiver.AlarmReceiver;
 
@@ -31,4 +32,11 @@ public class MainActivity extends AppCompatActivity {
         Intent i = new Intent(this, Login.class);
         startActivity(i);
     }
+
+    public void goAtividade5(View v) {
+        Intent i = new Intent(this, Atividade5.class);
+        startActivity(i);
+    }
+
+
 }

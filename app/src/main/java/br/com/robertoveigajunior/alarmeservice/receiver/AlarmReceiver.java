@@ -19,6 +19,6 @@ public class AlarmReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         mp = MediaPlayer.create(context, R.raw.hadouken);
         mp.start();
-        //Toast.makeText(context, "Alarm....", Toast.LENGTH_LONG).show();
+        Toast.makeText(context, "Alarm....", Toast.LENGTH_LONG).show();
     }
 }

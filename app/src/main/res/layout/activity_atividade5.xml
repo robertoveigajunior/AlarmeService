@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
-    android:orientation="vertical"
+    android:id="@+id/activity_atividade5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="br.com.robertoveigajunior.alarmeservice.MainActivity">
+    android:orientation="vertical"
+    tools:context="br.com.robertoveigajunior.alarmeservice.atividade5.Atividade5">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Alarme"
-        android:onClick="goAlarm"/>
+        android:text="Print Timestamp"
+        android:id="@+id/btPrint"
+        android:onClick="print"/>
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:onClick="goLogin"/>
+        android:text="Stop Service"
+        android:id="@+id/btStop"
+        android:onClick="stopService"/>
 
-    <Button
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Atividade 5"
-        android:onClick="goAtividade5"/>
+        android:id="@+id/txtStatus"
+        />
 
 </LinearLayout>

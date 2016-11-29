@@ -19,10 +19,14 @@
         <receiver android:name=".receiver.AlarmReceiver" />
 
         <activity android:name=".login.Login" />
-        <activity android:name=".alarm.Alarme"/>
-        <service android:name=".service.Logger"
-            android:label="Serviço de mensagens"
-            />
+        <activity android:name=".alarm.Alarme" />
 
+        <service
+            android:name=".service.Logger"
+            android:label="Serviço de mensagens" />
+
+        <service android:name=".service.BoundService"/>
+        <activity android:name=".atividade5.Atividade5"></activity>
     </application>
+
 </manifest>

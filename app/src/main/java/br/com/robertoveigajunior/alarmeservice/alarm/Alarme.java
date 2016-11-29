@@ -20,18 +20,25 @@ public class Alarme extends AppCompatActivity {
         setContentView(R.layout.activity_alarme);
     }
 
-    public void setTime(View v) {
-
+    private boolean validate() {
         EditText text = (EditText) findViewById(R.id.txtSegundos);
-        int i = Integer.parseInt(text.getText().toString());
-        Intent intent = new Intent(this, AlarmReceiver.class);
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(
-                this.getApplicationContext(), 0, intent, 0);
-        AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.set(AlarmManager.RTC_WAKEUP,
-                System.currentTimeMillis() + (i * 1000),
-                pendingIntent);
-        Toast.makeText(this, "Alarm set in " +i+ " seconds",Toast.LENGTH_LONG).show();
+        return !text.getText().toString().isEmpty();
+    }
 
+    public void setTime(View v) {
+        if (validate()) {
+            EditText text = (EditText) findViewById(R.id.txtSegundos);
+            int i = Integer.parseInt(text.getText().toString());
+            Intent intent = new Intent(this, AlarmReceiver.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(
+                    this.getApplicationContext(), 0, intent, 0);
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager.set(AlarmManager.RTC_WAKEUP,
+                    System.currentTimeMillis() + (i * 1000),
+                    pendingIntent);
+            Toast.makeText(this, "Alarm set in " + i + " seconds", Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, "Digite algum tempo", Toast.LENGTH_SHORT).show();
+        }
     }
 }
